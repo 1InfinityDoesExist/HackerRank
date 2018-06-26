@@ -38,14 +38,16 @@ int Solution::equalStacks(){
         third[iter] = data;
         h3 += data;
     }
+
+    bool sameSize = false;
     if(h1 == h2 && h2 == h3){
         return h1;
     }
     int i1 (0);
     int i2 (0);
     int i3 (0);
-    
-    while(1){
+
+    while(sameSize == false){
         if(h1 >= h2 && h1 >= h3){
             h1 = h1 - first[i1++];
         }
@@ -58,7 +60,7 @@ int Solution::equalStacks(){
         if(h1 == h2 && h2 == h3 || h1 == 0 && h2 == 0 && h3 == 0){
             return h1;
         }
-        
+
     }
     return h1;
 }
